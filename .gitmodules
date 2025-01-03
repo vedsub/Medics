@@ -7,3 +7,21 @@
 [submodule "solidity-course/foundry-f23/foundry-fund-me-f23/lib/chainlink-brownie-contracts"]
 	path = solidity-course/foundry-f23/foundry-fund-me-f23/lib/chainlink-brownie-contracts
 	url = https://github.com/smartcontractkit/chainlink-brownie-contracts
+[submodule "solidity-course/foundry-smart-contract-lottery-f23/lib/forge-std"]
+	path = solidity-course/foundry-smart-contract-lottery-f23/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "solidity-course/foundry-smart-contract-lottery-f23/lib/chainlink"]
+	path = solidity-course/foundry-smart-contract-lottery-f23/lib/chainlink
+	url = https://github.com/smartcontractkit/chainlink
+[submodule "solidity-course/foundry-erc20/lib/forge-std"]
+	path = solidity-course/foundry-erc20/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "solidity-course/foundry-erc20/lib/openzeppelin-contracts"]
+	path = solidity-course/foundry-erc20/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "adv-foundry/foundry-nft/lib/forge-std"]
+	path = adv-foundry/foundry-nft/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "adv-foundry/foundry-nft/lib/openzeppelin-contracts"]
+	path = adv-foundry/foundry-nft/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
