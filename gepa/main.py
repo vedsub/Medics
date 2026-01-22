@@ -1,16 +1,11 @@
-import dspy
 import os
+import json
+import random
+from pathlib import Path
 from dotenv import load_dotenv
 
-load_dotenv()
-import json
-from dspy.evaluate import Evaluate
-from dspy.teleprompt import GEPA
-from dspy.teleprompt.gepa.gepa_utils import ScoreWithFeedback
+import dspy
 from dspy import ChainOfThought
-from pathlib import Path
-import random
-
 
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -20,8 +15,9 @@ from langchain_huggingface import (
 from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document
 
-
 import mlflow
+
+load_dotenv()
 
 mlflow.dspy.autolog(
     log_compiles=True,  # Track optimization process
@@ -29,11 +25,8 @@ mlflow.dspy.autolog(
     log_traces_from_compile=True,  # Track program traces during optimization
 )
 
-
 mlflow.set_tracking_uri("http://127.0.0.1:5000")
 mlflow.set_experiment("med-ai-workshop")
-
-
 
 """
 Build a FAISS vector DB from two local PDF papers using LangChain.
@@ -61,7 +54,7 @@ CHUNK_OVERLAP = 200
 # - Keeping page granularity helps trace answers back to the original PDF.
 
 
-def load_pdfs(paths):
+def load_pdfs(paths: list[Path]):
     """Load PDFs into LangChain Document objects (keeps page-level granularity)."""
     all_docs = []
     for p in paths:
@@ -94,52 +87,46 @@ def chunk_documents(documents, chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLA
     return chunks
 
 
-def build_vector_store(
-    chunks, model_name=EMBEDDING_MODEL, save_dir=OUTPUT_COPD_FAISS_DIR
-):
-    """create embeddings and store them in faiss vector store and persist to disk"""
-    hf_emb = HuggingFaceEmbeddings(
-        model_name=model_name, model_kwargs={"device": "cpu"}
-    )
+def get_embeddings(model_name: str = EMBEDDING_MODEL) -> HuggingFaceEmbeddings:
+    return HuggingFaceEmbeddings(model_name=model_name, model_kwargs={"device": "cpu"})
 
+
+def get_or_build_vector_store(
+    *,
+    pdf_paths: list[Path],
+    save_dir: Path,
+    embeddings: HuggingFaceEmbeddings,
+) -> FAISS:
+    """
+    Load an existing persisted FAISS index if present; otherwise build from PDFs and persist.
+    """
+    save_dir = Path(save_dir)
+    index_file = save_dir / "index.faiss"
+    if index_file.exists():
+        print(f"Loading existing FAISS index from: {save_dir}")
+        return FAISS.load_local(
+            str(save_dir),
+            embeddings,
+            allow_dangerous_deserialization=True,
+        )
+
+    print(f"Building FAISS index (not found on disk) -> {save_dir}")
+    print("Loading PDFs...")
+    docs = load_pdfs(pdf_paths)
+    print(f"Loaded {len(docs)} page-documents from {len(pdf_paths)} PDFs.")
+
+    print("Chunking documents...")
+    chunks = chunk_documents(docs)
     print(
-        "Creating FAISS vector store from ",
-        len(chunks),
-        "chunks. This may take a while...",
+        f"Produced {len(chunks)} chunks (chunk_size={CHUNK_SIZE}, overlap={CHUNK_OVERLAP})."
     )
-    vector_store = FAISS.from_documents(chunks, hf_emb)
-    vector_store.save_local(save_dir)
+
+    print(f"Creating FAISS vector store from {len(chunks)} chunks. This may take a while...")
+    vector_store = FAISS.from_documents(chunks, embeddings)
+    save_dir.mkdir(parents=True, exist_ok=True)
+    vector_store.save_local(str(save_dir))
     print(f"Saved FAISS vectorstore to: {save_dir}")
-    return vector_store, hf_emb
-
-
-print("Loading Diabetes PDFs...")
-docs = load_pdfs(DIABETES_PDF_PATHS)
-print(f"Loaded {len(docs)} page-documents from {len(DIABETES_PDF_PATHS)} PDFs.")
-
-print("Chunking Diabetes documents...")
-chunks = chunk_documents(docs)
-print(
-    f"Produced {len(chunks)} chunks (chunk_size={CHUNK_SIZE}, overlap={CHUNK_OVERLAP})."
-)
-
-diabetes_vectorstore, diabetes_embeddings = build_vector_store(
-    chunks, save_dir=OUTPUT_DIABETES_FAISS_DIR
-)
-
-print("Loading COPD PDFs...")
-docs = load_pdfs(COPD_PDF_PATHS)
-print(f"Loaded {len(docs)} page-documents from {len(COPD_PDF_PATHS)} PDFs.")
-
-print("Chunking COPD documents...")
-chunks = chunk_documents(docs)
-print(
-    f"Produced {len(chunks)} chunks (chunk_size={CHUNK_SIZE}, overlap={CHUNK_OVERLAP})."
-)
-
-copd_vectorstore, copd_embeddings = build_vector_store(
-    chunks, save_dir=OUTPUT_COPD_FAISS_DIR
-)
+    return vector_store
 
 
 def diabetes_vector_search_tool(query: str, k: int = 3) -> str:
@@ -168,14 +155,33 @@ def copd_vector_search_tool(query: str, k: int = 3) -> str:
     return context
 
 
-lm = dspy.LM(
-    model="ollama_chat/qwen3:4b",
-    api_base="http://localhost:11434",
-    api_key="",
-    cache=False,
-    temperature=0.3,
-)
-dspy.settings.configure(lm=lm)
+def configure_dspy_lm() -> dspy.LM:
+    """
+    Default to local Ollama for easy offline testing.
+    To use OpenRouter, set BOTH:
+      - USE_OPENROUTER=1
+      - OPENROUTER_API_KEY=...
+    """
+    if os.environ.get("USE_OPENROUTER") == "1" and os.environ.get("OPENROUTER_API_KEY"):
+        lm = dspy.LM(
+            model="openrouter/openai/gpt-oss-20b",
+            api_base="https://openrouter.ai/api/v1",
+            api_key=os.environ["OPENROUTER_API_KEY"],
+            model_type="chat",
+            cache=False,
+            temperature=0.3,
+            max_tokens=4096,
+        )
+    else:
+        lm = dspy.LM(
+            model="ollama_chat/qwen3:4b",
+            api_base="http://localhost:11434",
+            api_key="",
+            cache=False,
+            temperature=0.3,
+        )
+    dspy.settings.configure(lm=lm)
+    return lm
 
 
 class RAGQA(dspy.Signature):
@@ -196,31 +202,21 @@ class RAGQA(dspy.Signature):
 
 rag = ChainOfThought(RAGQA)
 
-question = "What is Gestational Diabetes Mellitus (GDM)?"
-retrieved_context = diabetes_vector_search_tool(question, k=3)
-rag(context=retrieved_context, question=question)
 
-lm.inspect_history(n=1)
+def ask_diabetes(question: str, *, k: int = 3) -> str:
+    results = diabetes_vectorstore.similarity_search_with_score(question, k=k)
+    print("\n=== Retrieved context (diabetes) ===")
+    context = ""
+    for i, (doc, score) in enumerate(results, start=1):
+        source = (doc.metadata or {}).get("source", "unknown")
+        page = (doc.metadata or {}).get("page", "unknown")
+        print(f"\n[PASSAGE {i}] score={score:.4f} source={source} page={page}\n{doc.page_content}")
+        context += f"[PASSAGE {i}, score={score:.4f}]\n{doc.page_content}\n\n"
 
-
-with open(SCRIPT_DIR / "docs/qa_pairs_diabets.json", "r") as f:
-
-    qa_diabetes_data =  json.load(f)
-
-dataset_diabetes = [dspy.Example(question=item["question"], answer=item["answer"]).with_inputs("question") for item in qa_diabetes_data]
-
-# shuffle the dataset
-random.shuffle(dataset_diabetes)
-
-# Split the dataset as requested
-train_size = 20
-trainset_diabetes = dataset_diabetes[:train_size]
-devset_diabetes = dataset_diabetes[train_size:]
-
-print(f"Loaded {len(dataset_diabetes)} examples.")
-print(f"Train set size: {len(trainset_diabetes)}")
-print(f"Dev set size: {len(devset_diabetes)}")
-
+    pred = rag(context=context, question=question)
+    print("\n=== Answer ===")
+    print(pred.answer)
+    return pred.answer
 
 
 class ReActSignature(dspy.Signature):
@@ -228,10 +224,9 @@ class ReActSignature(dspy.Signature):
     question: str = dspy.InputField()
     answer: str = dspy.OutputField()
 
+
 class DiabetesAgent(dspy.Module):
-    def __init__(
-        self
-    ):
+    def __init__(self):
         # init LLM - using local Ollama model
         self.lm = dspy.LM(
             model="ollama_chat/qwen3:4b",
@@ -246,7 +241,59 @@ class DiabetesAgent(dspy.Module):
     def forward(self, question: str):
         return self.diabetes_agent(question=question)
 
-diabetes_agent = DiabetesAgent()
 
-diabetes_agent(question="What are the main treatments for Type 2 diabetes?")
-diabetes_agent.lm.inspect_history(n=2)
+if __name__ == "__main__":
+    # Optional MLflow logging (won't crash your script if MLflow server isn't running)
+    try:
+        import mlflow
+
+        mlflow.dspy.autolog(log_compiles=True, log_evals=True, log_traces_from_compile=True)
+        mlflow.set_tracking_uri(os.environ.get("MLFLOW_TRACKING_URI", "http://127.0.0.1:5000"))
+        mlflow.set_experiment(os.environ.get("MLFLOW_EXPERIMENT", "med-ai-workshop"))
+    except Exception as e:
+        print(f"(mlflow disabled) {e}")
+
+    embeddings = get_embeddings()
+    diabetes_vectorstore = get_or_build_vector_store(
+        pdf_paths=DIABETES_PDF_PATHS,
+        save_dir=OUTPUT_DIABETES_FAISS_DIR,
+        embeddings=embeddings,
+    )
+    copd_vectorstore = get_or_build_vector_store(
+        pdf_paths=COPD_PDF_PATHS,
+        save_dir=OUTPUT_COPD_FAISS_DIR,
+        embeddings=embeddings,
+    )
+
+    lm = configure_dspy_lm()
+
+    q = "What is diabetes mellitus?"
+    ask_diabetes(q, k=3)
+    
+    # Load dataset if available
+    try:
+        with open(SCRIPT_DIR / "docs/qa_pairs_diabets.json", "r") as f:
+            qa_diabetes_data = json.load(f)
+        
+        # Convert to dspy.Example objects
+        dataset_diabetes = [dspy.Example(question=item["question"], answer=item["answer"]).with_inputs("question") for item in qa_diabetes_data]
+        
+        # shuffle the dataset
+        random.shuffle(dataset_diabetes)
+        
+        # Split the dataset as requested
+        train_size = 20
+        trainset_diabetes = dataset_diabetes[:train_size]
+        devset_diabetes = dataset_diabetes[train_size:]
+        
+        print(f"Loaded {len(dataset_diabetes)} examples.")
+        print(f"Train set size: {len(trainset_diabetes)}")
+        print(f"Dev set size: {len(devset_diabetes)}")
+        
+    except FileNotFoundError:
+        print("Dataset not found, skipping dataset loading.")
+
+    # Agent example
+    diabetes_agent = DiabetesAgent()
+    diabetes_agent(question="What are the main treatments for Type 2 diabetes?")
+    diabetes_agent.lm.inspect_history(n=2)
