@@ -34,24 +34,22 @@ mlflow.set_tracking_uri("http://127.0.0.1:5000")
 mlflow.set_experiment("med-ai-workshop")
 
 
-question = "What is a language model in one sentence?"
-local_lm = dspy.LM(
-    model="ollama_chat/qwen3:4b", api_base="http://localhost:11434", api_key=""
-)
-print(local_lm(question))
 
 """
 Build a FAISS vector DB from two local PDF papers using LangChain.
 Outputs a directory "faiss_index" with the persisted vectorstore.
 """
 
+# Get the directory where this script is located
+SCRIPT_DIR = Path(__file__).parent.resolve()
+
 DIABETES_PDF_PATHS = [
-    "docs/diabets1.pdf",
-    "docs/diabets2.pdf",
+    SCRIPT_DIR / "docs/diabets1.pdf",
+    SCRIPT_DIR / "docs/diabets2.pdf",
 ]  # <-- put your two PDF filenames here
-COPD_PDF_PATHS = ["docs/copd1.pdf", "docs/copd2.pdf"]
-OUTPUT_DIABETES_FAISS_DIR = "faiss_index/diabetes"
-OUTPUT_COPD_FAISS_DIR = "faiss_index/copd"
+COPD_PDF_PATHS = [SCRIPT_DIR / "docs/copd1.pdf", SCRIPT_DIR / "docs/copd2.pdf"]
+OUTPUT_DIABETES_FAISS_DIR = SCRIPT_DIR / "faiss_index/diabetes"
+OUTPUT_COPD_FAISS_DIR = SCRIPT_DIR / "faiss_index/copd"
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 # chunk settings (tweak for your needs)
 CHUNK_SIZE = 400
@@ -171,13 +169,11 @@ def copd_vector_search_tool(query: str, k: int = 3) -> str:
 
 
 lm = dspy.LM(
-    "openrouter/openai/gpt-oss-20b",
-    api_base="https://openrouter.ai/api/v1",
-    api_key=os.environ["OPENROUTER_API_KEY"],
-    model_type="chat",
+    model="ollama_chat/qwen3:4b",
+    api_base="http://localhost:11434",
+    api_key="",
     cache=False,
     temperature=0.3,
-    max_tokens=64000,
 )
 dspy.settings.configure(lm=lm)
 
@@ -187,7 +183,15 @@ class RAGQA(dspy.Signature):
 
     question: str = dspy.InputField()
     context: str = dspy.InputField()
-    answer: str = dspy.OutputField()
+    scored_context: str = dspy.OutputField(
+        desc="The retrieved passages with their relevance scores. Format each passage as: [PASSAGE N, score=X.XX] followed by the passage content."
+    )
+    reasoning: str = dspy.OutputField(
+        desc="Step-by-step reasoning based on the scored context to derive the answer."
+    )
+    answer: str = dspy.OutputField(
+        desc="The final answer to the question based on the reasoning."
+    )
 
 
 rag = ChainOfThought(RAGQA)
@@ -198,3 +202,51 @@ rag(context=retrieved_context, question=question)
 
 lm.inspect_history(n=1)
 
+
+with open(SCRIPT_DIR / "docs/qa_pairs_diabets.json", "r") as f:
+
+    qa_diabetes_data =  json.load(f)
+
+dataset_diabetes = [dspy.Example(question=item["question"], answer=item["answer"]).with_inputs("question") for item in qa_diabetes_data]
+
+# shuffle the dataset
+random.shuffle(dataset_diabetes)
+
+# Split the dataset as requested
+train_size = 20
+trainset_diabetes = dataset_diabetes[:train_size]
+devset_diabetes = dataset_diabetes[train_size:]
+
+print(f"Loaded {len(dataset_diabetes)} examples.")
+print(f"Train set size: {len(trainset_diabetes)}")
+print(f"Dev set size: {len(devset_diabetes)}")
+
+
+
+class ReActSignature(dspy.Signature):
+    """You are a helpful assistant. Answer user's question."""
+    question: str = dspy.InputField()
+    answer: str = dspy.OutputField()
+
+class DiabetesAgent(dspy.Module):
+    def __init__(
+        self
+    ):
+        # init LLM - using local Ollama model
+        self.lm = dspy.LM(
+            model="ollama_chat/qwen3:4b",
+            api_base="http://localhost:11434",
+            api_key="",
+            temperature=0.3,
+            cache=False
+        )
+        dspy.configure(lm=self.lm)
+        self.diabetes_agent = dspy.ReAct(ReActSignature, tools=[diabetes_vector_search_tool])
+
+    def forward(self, question: str):
+        return self.diabetes_agent(question=question)
+
+diabetes_agent = DiabetesAgent()
+
+diabetes_agent(question="What are the main treatments for Type 2 diabetes?")
+diabetes_agent.lm.inspect_history(n=2)
