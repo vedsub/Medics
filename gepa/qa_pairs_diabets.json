@@ -1,0 +1,524 @@
+[
+    {
+      "question": "What is the primary pathological feature of COPD according to recent pathogenesis reviews?",
+      "answer": "The main pathological feature of COPD is a chronic and abnormal inflammatory response in the lungs, leading to airway and alveolar changes such as small airways disease and emphysema[cite: 22]."
+    },
+    {
+      "question": "Which cytokine is essential for neutrophilic inflammation in the innate immune response of COPD?",
+      "answer": "Neutrophilic inflammation in COPD depends strongly on IL-1-alpha, which is increased in patients and induced in airway epithelial cells[cite: 52]."
+    },
+    {
+      "question": "What role do CD8 cytotoxic T cells play in the adaptive immune response of COPD?",
+      "answer": "CD8 cytotoxic T cells are the predominant cell type in the adaptive immune response of COPD and remain present in the airways and parenchyma for years, even after smoking cessation[cite: 53, 54]."
+    },
+    {
+      "question": "How are Group 3 innate lymphoid cells (ILC3) involved in COPD pathology?",
+      "answer": "ILC3s appear to be the main subtype of innate lymphoid cells in COPD and are suggested to be involved in initiating ectopic lymphoid aggregates[cite: 60]."
+    },
+    {
+      "question": "What specific patient subgroup might an airway epithelial IL-17A response signature identify in COPD?",
+      "answer": "An airway epithelial IL-17A response signature identifies a subgroup of COPD patients who are unresponsive to steroids[cite: 68]."
+    },
+    {
+      "question": "What imbalance in the Extracellular Matrix (ECM) regulation contributes to emphysema?",
+      "answer": "An imbalance between matrix metalloproteinases (MMPs), specifically MMP-2, MMP-9, and MMP-12, and tissue inhibitors of metalloproteinases (TIMPs) shifts homeostasis toward increased ECM degradation, particularly of elastin[cite: 85]."
+    },
+    {
+      "question": "What is the role of Fibulin-5 in the lung, and how is it altered in COPD?",
+      "answer": "Fibulin-5 is a key modulator of elastic fiber formation; in COPD, its gene expression is increased, but the protein is often cleaved and non-functional, leading to disturbed elastogenesis and repair failure[cite: 88, 90]."
+    },
+    {
+      "question": "How does the proteoglycan decorin influence tissue repair in the airways?",
+      "answer": "Decorin binds to collagen fibrils for structural support and binds growth factors like TGF-beta, inhibiting their activity; its absence in small airways contributes to disorganized collagen fibrils[cite: 93, 94, 95]."
+    },
+    {
+      "question": "What genetic pathway was enriched in GWAS analysis for airflow obstruction (decreased FEV1/FVC)?",
+      "answer": "Pathway analysis for airflow obstruction showed enrichment of gene sets involved in ECM remodeling, including the integrin pathway, proteinaceous ECM, and collagen[cite: 104]."
+    },
+    {
+      "question": "How does accelerated aging contribute to the pathogenesis of COPD?",
+      "answer": "Accelerated aging in COPD involves telomere shortening and a decline in homeostasis, leading to senile emphysema and altered ECM proteins, which may trigger aberrant repair responses when exposed to insults like smoke[cite: 128, 129]."
+    },
+    {
+      "question": "What is the function of Growth Differentiation Factor 11 (GDF11) in the context of COPD and aging?",
+      "answer": "GDF11 is an anti-aging factor that is decreased in the plasma and mesenchymal cells of COPD patients; its administration has been shown to attenuate emphysema and cellular senescence in animal models[cite: 137, 139]."
+    },
+    {
+      "question": "What advantage does micro-CT have over clinical CT in analyzing COPD pathology?",
+      "answer": "Micro-CT has a spatial resolution of up to 1 µm (compared to 800-1000 µm for clinical CT), allowing for the visualization of alveolar structures and terminal bronchioles[cite: 161, 162]."
+    },
+    {
+      "question": "What did micro-CT studies reveal about the sequence of small airway loss versus emphysema?",
+      "answer": "Micro-CT studies showed that terminal bronchioles are significantly destroyed (up to 41% in mild COPD) before the development of emphysematous destruction, suggesting small airway disease is an early precursor[cite: 164, 171]."
+    },
+    {
+      "question": "What is Parametric Response Mapping (PRM) and what can it distinguish?",
+      "answer": "PRM is an imaging technique that registers inspiratory and expiratory CT scans to distinguish between emphysema (PRM-emph) and non-emphysematous gas trapping, termed functional small airways disease (PRM-fSAD)[cite: 174]."
+    },
+    {
+      "question": "How do female smokers compare to males regarding lung function decline?",
+      "answer": "Female smokers experience a faster annual decline in FEV1 than males for the same number of pack-years, and this decline is even more accelerated in women who already have airflow obstruction[cite: 186, 189]."
+    },
+    {
+      "question": "What anatomical difference in females might contribute to increased susceptibility to smoking-related damage?",
+      "answer": "Females generally have smaller lungs than males, so one pack of cigarettes represents a higher proportional toxic dose[cite: 231]."
+    },
+    {
+      "question": "How does estrogen influence the metabolism of cigarette smoke components?",
+      "answer": "Estrogen stimulates the expression of CYP450 enzymes (CYP1A1 and CYP1B1) in bronchial epithelial cells, which convert smoke constituents into toxic metabolites like naphthalene oxide[cite: 238, 240]."
+    },
+    {
+      "question": "Which gene was identified as a potential risk locus for COPD specifically in women?",
+      "answer": "The CELSR1 gene, which is involved in early lung development, was identified as a potential risk locus for COPD in women[cite: 247, 248]."
+    },
+    {
+      "question": "Why did mepolizumab fail to show major benefits in COPD compared to asthma?",
+      "answer": "Mepolizumab showed only a modest 15% reduction in COPD exacerbations (vs 50% in asthma) likely because eosinophils are less central to COPD exacerbations, or inflammation is driven by redundant cytokines like IL-3 and GM-CSF[cite: 265, 269]."
+    },
+    {
+      "question": "What defines a 'stable' COPD patient?",
+      "answer": "Stable COPD is defined when symptoms are well managed and pulmonary decline is minimized, as opposed to unstable disease characterized by frequent exacerbations[cite: 585]."
+    },
+    {
+      "question": "How does an exacerbation history influence future COPD risk?",
+      "answer": "A history of exacerbations is a major predictor of future events; for example, patients with two or more exacerbations in a previous year have a significantly higher rate of future exacerbations[cite: 608, 627]."
+    },
+    {
+      "question": "What is the GOLD ABCD assessment tool based on?",
+      "answer": "The GOLD ABCD tool categorizes patients based on symptom severity (using CAT or mMRC scores) and exacerbation risk (based on history or airflow limitation)[cite: 619]."
+    },
+    {
+      "question": "Why is LAMA/LABA combination therapy often preferred over LABA/ICS for exacerbation prevention?",
+      "answer": "Studies like FLAME and LANTERN showed that LAMA/LABA therapy is more effective than LABA/ICS in reducing exacerbation rates and improving lung function, while avoiding ICS-related risks like pneumonia[cite: 623, 632]."
+    },
+    {
+      "question": "When is triple therapy (LAMA/LABA/ICS) recommended for COPD patients?",
+      "answer": "Triple therapy is recommended for patients who experience further exacerbations on LAMA/LABA or LABA/ICS, particularly if they have blood eosinophil counts ≥100 cells/µL[cite: 671, 678]."
+    },
+    {
+      "question": "What is the recommended duration for systemic corticosteroids during a COPD exacerbation?",
+      "answer": "Current guidelines recommend a short course of 5 days, as the REDUCE trial showed this was non-inferior to 14 days regarding re-exacerbation rates and recovery[cite: 739, 740]."
+    },
+    {
+      "question": "What components are included in effective COPD discharge care bundles?",
+      "answer": "Effective bundles include patient education, inhaler technique training, smoking cessation counseling, and scheduled follow-up appointments with pulmonologists[cite: 808, 833]."
+    },
+    {
+      "question": "How does the timing of maintenance therapy initiation affect readmissions?",
+      "answer": "Initiating maintenance therapy within 30 days of discharge significantly reduces the risk of COPD-related hospitalizations and ED visits in the following year[cite: 821, 824]."
+    },
+    {
+      "question": "What is the 'frequent exacerbator' phenotype?",
+      "answer": "It is a phenotype of patients who experience recurrent exacerbations, which is stable over time and can occur across all severities of airflow obstruction, not just severe cases[cite: 784, 786]."
+    },
+    {
+      "question": "What is the estimated prevalence of Type 2 Diabetes Mellitus (T2DM) projected for 2030?",
+      "answer": "It is estimated that 439 million people will have Type 2 Diabetes by the year 2030[cite: 1007]."
+    },
+    {
+      "question": "What are the primary pathophysiological defects in Type 2 Diabetes?",
+      "answer": "T2DM is characterized by insulin resistance, declining insulin production due to beta-cell failure, and impaired alpha-cell function leading to unsuppressed glucagon[cite: 1000, 1026, 1029]."
+    },
+    {
+      "question": "How does obesity contribute to Type 2 Diabetes risk?",
+      "answer": "Obesity contributes to approximately 55% of Type 2 Diabetes cases, largely through mechanisms like central visceral adiposity and the secretion of adipocytokines that impair insulin sensitivity[cite: 1020, 1037]."
+    },
+    {
+      "question": "Which genes are significantly associated with developing Type 2 Diabetes?",
+      "answer": "Significant genes include TCF7L2, PPARG, FTO, KCNJ11, NOTCH2, WFS1, CDKAL1, IGF2BP2, SLC30A8, JAZF1, and HHEX[cite: 1022]."
+    },
+    {
+      "question": "What is the difference between ADA and WHO diagnostic criteria for diabetes?",
+      "answer": "The ADA focuses on Fasting Plasma Glucose (FPG), whereas the WHO criteria emphasize the Oral Glucose Tolerance Test (OGTT)[cite: 1047]."
+    },
+    {
+      "question": "What is the mechanism of action of metformin?",
+      "answer": "Metformin suppresses hepatic glucose production, increases insulin sensitivity, decreases intestinal glucose absorption, and activates AMP-activated protein kinase[cite: 1060, 1061]."
+    },
+    {
+      "question": "Why should long-acting sulfonylureas like glyburide be avoided in the elderly?",
+      "answer": "They carry a high risk of prolonged hypoglycemia, which is particularly dangerous in elderly patients who may also have impaired renal function[cite: 1067, 1069]."
+    },
+    {
+      "question": "What is the advantage of meglitinides over sulfonylureas?",
+      "answer": "Meglitinides have a rapid onset and short duration (4-6 hours), which results in a lower risk of hypoglycemia compared to sulfonylureas[cite: 1072]."
+    },
+    {
+      "question": "What are the main side effects associated with Thiazolidinediones (TZDs)?",
+      "answer": "Side effects include peripheral edema, fluid retention, and increased fracture risk in women; they are contraindicated in Class III-IV heart failure[cite: 1080, 1081]."
+    },
+    {
+      "question": "How do DPP-4 inhibitors improve glycemic control?",
+      "answer": "DPP-4 inhibitors prevent the inactivation of GLP-1 and GIP, thereby increasing the active levels of these incretin hormones to improve islet function[cite: 1096]."
+    },
+    {
+      "question": "What was the commercial outcome of the first inhaled insulin product?",
+      "answer": "Inhaled insulin was withdrawn from the market in 2007 due to poor sales (low patronage), despite being effective[cite: 1116]."
+    },
+    {
+      "question": "What is Gestational Diabetes Mellitus (GDM)?",
+      "answer": "GDM is a metabolic condition defined as chronic hyperglycemia first developing during pregnancy in women who did not previously have diabetes[cite: 1250]."
+    },
+    {
+      "question": "What causes insulin resistance during a healthy pregnancy?",
+      "answer": "Insulin resistance during pregnancy is induced by placental hormones to ensure the fetus receives sufficient nourishment[cite: 1266]."
+    },
+    {
+      "question": "What are the key risk factors for developing GDM?",
+      "answer": "Risk factors include being overweight or obese, older maternal age, and a family history of diabetes[cite: 1252]."
+    },
+    {
+      "question": "What is the Modified Pedersen's hypothesis regarding fetal macrosomia?",
+      "answer": "The hypothesis states that maternal hyperglycemia transfers excess glucose to the fetus, stimulating fetal hyperinsulinemia, which acts as a growth factor leading to macrosomia[cite: 1367]."
+    },
+    {
+      "question": "How does GDM affect the risk of cesarean section?",
+      "answer": "GDM increases the risk of cesarean section due to complications like macrosomia and the potential for difficult childbirth[cite: 1270, 1309]."
+    },
+    {
+      "question": "What is the long-term risk of Type 2 Diabetes for women with a history of GDM?",
+      "answer": "Women with GDM have a 20% to 60% risk of developing Type 2 Diabetes within 5 to 10 years after pregnancy[cite: 1314]."
+    },
+    {
+      "question": "What neonatal complication is associated with post-birth hyperinsulinemia?",
+      "answer": "Neonatal hypoglycemia occurs because the newborn continues to produce high levels of insulin (due to prior high maternal glucose) after the maternal glucose supply is cut off at birth[cite: 1367]."
+    },
+    {
+      "question": "How does GDM affect the offspring's long-term cardiovascular health?",
+      "answer": "Offspring of mothers with GDM have a higher risk of early-onset cardiovascular conditions, including high blood pressure and heart failure[cite: 1415]."
+    },
+    {
+      "question": "How does GDM impact breast milk production?",
+      "answer": "GDM can delay the initiation of lactation and alter breast milk composition, taking longer to reach normal levels of citrate, lactose, and nitrogen[cite: 1390, 1391]."
+    },
+    {
+      "question": "What is the success rate of lifestyle modification in treating GDM?",
+      "answer": "Up to 70-85% of women with GDM can be successfully treated with diet, exercise, and lifestyle changes alone[cite: 1422]."
+    },
+    {
+      "question": "Which oral medications are discussed for GDM management in the review?",
+      "answer": "Metformin and glyburide are discussed, though they can cross the placental barrier, raising some safety concerns[cite: 1257, 1466]."
+    },
+    {
+      "question": "What is the recommended target for fasting blood sugar in GDM according to the ADA?",
+      "answer": "The ADA recommends a fasting blood sugar target of 95 mg/dL or lower for pregnant women with GDM[cite: 1450]."
+    },
+    {
+      "question": "How frequently should women with prior GDM be screened for Type 2 Diabetes?",
+      "answer": "Women with prior GDM should undergo testing for Type 2 Diabetes at least once every 1 to 3 years."
+    },
+    {
+      "question": "What physiological change in the placenta contributes to fetal overgrowth in GDM?",
+      "answer": "Elevated maternal insulin and glucose activate placental mTOR signaling and increase amino acid transporters (System A and L), boosting nutrient supply to the fetus[cite: 1370]."
+    },
+    {
+      "question": "What is the relationship between maternal obesity and GDM risk?",
+      "answer": "Obese pregnant women are 3.56 times more likely, and extremely obese women are 8.56 times more likely to develop GDM compared to those of average weight[cite: 1346]."
+    },
+    {
+      "question": "What specific congenital anomalies are more common in diabetic pregnancies?",
+      "answer": "The most prevalent anomalies include heart defects and neural tube disorders such as spina bifida[cite: 1380]."
+    },
+    {
+      "question": "Why is the one-step GDM diagnosis approach controversial compared to the two-step approach?",
+      "answer": "The one-step approach results in diagnosing two to three times more women with GDM, significantly increasing the healthcare caseload[cite: 1511]."
+    },
+    {
+      "question": "What markers indicate 'decompensation' of beta-cells in post-GDM women?",
+      "answer": "Markers of decompensation include elevated glucose levels, noticeable insulin resistance, increased C-reactive protein, and declining adiponectin levels[cite: 1321, 1323]."
+    },
+    {
+      "question": "How does reduced hepatic conjugation of bilirubin affect infants of diabetic mothers?",
+      "answer": "It leads to increased enterohepatic circulation of bilirubin, contributing to a higher risk of neonatal jaundice[cite: 1402]."
+    },
+    {
+      "question": "What effect does GDM have on the immune composition of colostrum?",
+      "answer": "GDM leads to elevated levels of cytokines like IL-6 and IL-15, and decreased levels of IL-1ra and GM-CSF in colostrum[cite: 1393]."
+    },
+    {
+      "question": "What is the primary goal of GDM treatment?",
+      "answer": "The primary goal is to control high blood sugar levels to reduce health hazards for both the mother and the infant[cite: 1279]."
+    },
+    {
+      "question": "What happens to insulin sensitivity in GDM patients immediately postpartum?",
+      "answer": "Insulin sensitivity typically returns quickly to normal levels after delivery, allowing most women to discontinue GDM medication[cite: 1284]."
+    },
+    {
+      "question": "What role does physical exercise play in GDM management?",
+      "answer": "Moderate exercise lowers the risk of GDM, reduces the chance of having large newborns, and helps prevent hypertensive disorders and preterm birth[cite: 1458]."
+    },
+    {
+      "question": "How does the 'ectopic fat storage syndrome' theory explain Type 2 Diabetes?",
+      "answer": "It suggests that the deposition of triglycerides in non-adipose tissues like muscle, liver, and pancreatic cells contributes to insulin resistance and beta-cell dysfunction[cite: 1040]."
+    },
+    {
+      "question": "What is the recommended HbA1c range for identifying high risk of diabetes (pre-diabetes) according to the IEC?",
+      "answer": "The IEC identifies an HbA1c range of ≥6.0% and <6.5% as indicating a high risk for developing diabetes[cite: 1052]."
+    },
+    {
+      "question": "What is the main limitation of using insulin therapy in Type 2 Diabetes?",
+      "answer": "Traditional insulins have inconsistent absorption and peaks that may cause hypoglycemia; however, newer analogues have improved pharmacokinetic profiles[cite: 1110, 1111]."
+    }
+  ]
+[
+    {
+      "question": "What is the primary pathological feature of COPD according to recent pathogenesis reviews?",
+      "answer": "The main pathological feature of COPD is a chronic and abnormal inflammatory response in the lungs, leading to airway and alveolar changes such as small airways disease and emphysema[cite: 22]."
+    },
+    {
+      "question": "Which cytokine is essential for neutrophilic inflammation in the innate immune response of COPD?",
+      "answer": "Neutrophilic inflammation in COPD depends strongly on IL-1-alpha, which is increased in patients and induced in airway epithelial cells[cite: 52]."
+    },
+    {
+      "question": "What role do CD8 cytotoxic T cells play in the adaptive immune response of COPD?",
+      "answer": "CD8 cytotoxic T cells are the predominant cell type in the adaptive immune response of COPD and remain present in the airways and parenchyma for years, even after smoking cessation[cite: 53, 54]."
+    },
+    {
+      "question": "How are Group 3 innate lymphoid cells (ILC3) involved in COPD pathology?",
+      "answer": "ILC3s appear to be the main subtype of innate lymphoid cells in COPD and are suggested to be involved in initiating ectopic lymphoid aggregates[cite: 60]."
+    },
+    {
+      "question": "What specific patient subgroup might an airway epithelial IL-17A response signature identify in COPD?",
+      "answer": "An airway epithelial IL-17A response signature identifies a subgroup of COPD patients who are unresponsive to steroids[cite: 68]."
+    },
+    {
+      "question": "What imbalance in the Extracellular Matrix (ECM) regulation contributes to emphysema?",
+      "answer": "An imbalance between matrix metalloproteinases (MMPs), specifically MMP-2, MMP-9, and MMP-12, and tissue inhibitors of metalloproteinases (TIMPs) shifts homeostasis toward increased ECM degradation, particularly of elastin[cite: 85]."
+    },
+    {
+      "question": "What is the role of Fibulin-5 in the lung, and how is it altered in COPD?",
+      "answer": "Fibulin-5 is a key modulator of elastic fiber formation; in COPD, its gene expression is increased, but the protein is often cleaved and non-functional, leading to disturbed elastogenesis and repair failure[cite: 88, 90]."
+    },
+    {
+      "question": "How does the proteoglycan decorin influence tissue repair in the airways?",
+      "answer": "Decorin binds to collagen fibrils for structural support and binds growth factors like TGF-beta, inhibiting their activity; its absence in small airways contributes to disorganized collagen fibrils[cite: 93, 94, 95]."
+    },
+    {
+      "question": "What genetic pathway was enriched in GWAS analysis for airflow obstruction (decreased FEV1/FVC)?",
+      "answer": "Pathway analysis for airflow obstruction showed enrichment of gene sets involved in ECM remodeling, including the integrin pathway, proteinaceous ECM, and collagen[cite: 104]."
+    },
+    {
+      "question": "How does accelerated aging contribute to the pathogenesis of COPD?",
+      "answer": "Accelerated aging in COPD involves telomere shortening and a decline in homeostasis, leading to senile emphysema and altered ECM proteins, which may trigger aberrant repair responses when exposed to insults like smoke[cite: 128, 129]."
+    },
+    {
+      "question": "What is the function of Growth Differentiation Factor 11 (GDF11) in the context of COPD and aging?",
+      "answer": "GDF11 is an anti-aging factor that is decreased in the plasma and mesenchymal cells of COPD patients; its administration has been shown to attenuate emphysema and cellular senescence in animal models[cite: 137, 139]."
+    },
+    {
+      "question": "What advantage does micro-CT have over clinical CT in analyzing COPD pathology?",
+      "answer": "Micro-CT has a spatial resolution of up to 1 µm (compared to 800-1000 µm for clinical CT), allowing for the visualization of alveolar structures and terminal bronchioles[cite: 161, 162]."
+    },
+    {
+      "question": "What did micro-CT studies reveal about the sequence of small airway loss versus emphysema?",
+      "answer": "Micro-CT studies showed that terminal bronchioles are significantly destroyed (up to 41% in mild COPD) before the development of emphysematous destruction, suggesting small airway disease is an early precursor[cite: 164, 171]."
+    },
+    {
+      "question": "What is Parametric Response Mapping (PRM) and what can it distinguish?",
+      "answer": "PRM is an imaging technique that registers inspiratory and expiratory CT scans to distinguish between emphysema (PRM-emph) and non-emphysematous gas trapping, termed functional small airways disease (PRM-fSAD)[cite: 174]."
+    },
+    {
+      "question": "How do female smokers compare to males regarding lung function decline?",
+      "answer": "Female smokers experience a faster annual decline in FEV1 than males for the same number of pack-years, and this decline is even more accelerated in women who already have airflow obstruction[cite: 186, 189]."
+    },
+    {
+      "question": "What anatomical difference in females might contribute to increased susceptibility to smoking-related damage?",
+      "answer": "Females generally have smaller lungs than males, so one pack of cigarettes represents a higher proportional toxic dose[cite: 231]."
+    },
+    {
+      "question": "How does estrogen influence the metabolism of cigarette smoke components?",
+      "answer": "Estrogen stimulates the expression of CYP450 enzymes (CYP1A1 and CYP1B1) in bronchial epithelial cells, which convert smoke constituents into toxic metabolites like naphthalene oxide[cite: 238, 240]."
+    },
+    {
+      "question": "Which gene was identified as a potential risk locus for COPD specifically in women?",
+      "answer": "The CELSR1 gene, which is involved in early lung development, was identified as a potential risk locus for COPD in women[cite: 247, 248]."
+    },
+    {
+      "question": "Why did mepolizumab fail to show major benefits in COPD compared to asthma?",
+      "answer": "Mepolizumab showed only a modest 15% reduction in COPD exacerbations (vs 50% in asthma) likely because eosinophils are less central to COPD exacerbations, or inflammation is driven by redundant cytokines like IL-3 and GM-CSF[cite: 265, 269]."
+    },
+    {
+      "question": "What defines a 'stable' COPD patient?",
+      "answer": "Stable COPD is defined when symptoms are well managed and pulmonary decline is minimized, as opposed to unstable disease characterized by frequent exacerbations[cite: 585]."
+    },
+    {
+      "question": "How does an exacerbation history influence future COPD risk?",
+      "answer": "A history of exacerbations is a major predictor of future events; for example, patients with two or more exacerbations in a previous year have a significantly higher rate of future exacerbations[cite: 608, 627]."
+    },
+    {
+      "question": "What is the GOLD ABCD assessment tool based on?",
+      "answer": "The GOLD ABCD tool categorizes patients based on symptom severity (using CAT or mMRC scores) and exacerbation risk (based on history or airflow limitation)[cite: 619]."
+    },
+    {
+      "question": "Why is LAMA/LABA combination therapy often preferred over LABA/ICS for exacerbation prevention?",
+      "answer": "Studies like FLAME and LANTERN showed that LAMA/LABA therapy is more effective than LABA/ICS in reducing exacerbation rates and improving lung function, while avoiding ICS-related risks like pneumonia[cite: 623, 632]."
+    },
+    {
+      "question": "When is triple therapy (LAMA/LABA/ICS) recommended for COPD patients?",
+      "answer": "Triple therapy is recommended for patients who experience further exacerbations on LAMA/LABA or LABA/ICS, particularly if they have blood eosinophil counts ≥100 cells/µL[cite: 671, 678]."
+    },
+    {
+      "question": "What is the recommended duration for systemic corticosteroids during a COPD exacerbation?",
+      "answer": "Current guidelines recommend a short course of 5 days, as the REDUCE trial showed this was non-inferior to 14 days regarding re-exacerbation rates and recovery[cite: 739, 740]."
+    },
+    {
+      "question": "What components are included in effective COPD discharge care bundles?",
+      "answer": "Effective bundles include patient education, inhaler technique training, smoking cessation counseling, and scheduled follow-up appointments with pulmonologists[cite: 808, 833]."
+    },
+    {
+      "question": "How does the timing of maintenance therapy initiation affect readmissions?",
+      "answer": "Initiating maintenance therapy within 30 days of discharge significantly reduces the risk of COPD-related hospitalizations and ED visits in the following year[cite: 821, 824]."
+    },
+    {
+      "question": "What is the 'frequent exacerbator' phenotype?",
+      "answer": "It is a phenotype of patients who experience recurrent exacerbations, which is stable over time and can occur across all severities of airflow obstruction, not just severe cases[cite: 784, 786]."
+    },
+    {
+      "question": "What is the estimated prevalence of Type 2 Diabetes Mellitus (T2DM) projected for 2030?",
+      "answer": "It is estimated that 439 million people will have Type 2 Diabetes by the year 2030[cite: 1007]."
+    },
+    {
+      "question": "What are the primary pathophysiological defects in Type 2 Diabetes?",
+      "answer": "T2DM is characterized by insulin resistance, declining insulin production due to beta-cell failure, and impaired alpha-cell function leading to unsuppressed glucagon[cite: 1000, 1026, 1029]."
+    },
+    {
+      "question": "How does obesity contribute to Type 2 Diabetes risk?",
+      "answer": "Obesity contributes to approximately 55% of Type 2 Diabetes cases, largely through mechanisms like central visceral adiposity and the secretion of adipocytokines that impair insulin sensitivity[cite: 1020, 1037]."
+    },
+    {
+      "question": "Which genes are significantly associated with developing Type 2 Diabetes?",
+      "answer": "Significant genes include TCF7L2, PPARG, FTO, KCNJ11, NOTCH2, WFS1, CDKAL1, IGF2BP2, SLC30A8, JAZF1, and HHEX[cite: 1022]."
+    },
+    {
+      "question": "What is the difference between ADA and WHO diagnostic criteria for diabetes?",
+      "answer": "The ADA focuses on Fasting Plasma Glucose (FPG), whereas the WHO criteria emphasize the Oral Glucose Tolerance Test (OGTT)[cite: 1047]."
+    },
+    {
+      "question": "What is the mechanism of action of metformin?",
+      "answer": "Metformin suppresses hepatic glucose production, increases insulin sensitivity, decreases intestinal glucose absorption, and activates AMP-activated protein kinase[cite: 1060, 1061]."
+    },
+    {
+      "question": "Why should long-acting sulfonylureas like glyburide be avoided in the elderly?",
+      "answer": "They carry a high risk of prolonged hypoglycemia, which is particularly dangerous in elderly patients who may also have impaired renal function[cite: 1067, 1069]."
+    },
+    {
+      "question": "What is the advantage of meglitinides over sulfonylureas?",
+      "answer": "Meglitinides have a rapid onset and short duration (4-6 hours), which results in a lower risk of hypoglycemia compared to sulfonylureas[cite: 1072]."
+    },
+    {
+      "question": "What are the main side effects associated with Thiazolidinediones (TZDs)?",
+      "answer": "Side effects include peripheral edema, fluid retention, and increased fracture risk in women; they are contraindicated in Class III-IV heart failure[cite: 1080, 1081]."
+    },
+    {
+      "question": "How do DPP-4 inhibitors improve glycemic control?",
+      "answer": "DPP-4 inhibitors prevent the inactivation of GLP-1 and GIP, thereby increasing the active levels of these incretin hormones to improve islet function[cite: 1096]."
+    },
+    {
+      "question": "What was the commercial outcome of the first inhaled insulin product?",
+      "answer": "Inhaled insulin was withdrawn from the market in 2007 due to poor sales (low patronage), despite being effective[cite: 1116]."
+    },
+    {
+      "question": "What is Gestational Diabetes Mellitus (GDM)?",
+      "answer": "GDM is a metabolic condition defined as chronic hyperglycemia first developing during pregnancy in women who did not previously have diabetes[cite: 1250]."
+    },
+    {
+      "question": "What causes insulin resistance during a healthy pregnancy?",
+      "answer": "Insulin resistance during pregnancy is induced by placental hormones to ensure the fetus receives sufficient nourishment[cite: 1266]."
+    },
+    {
+      "question": "What are the key risk factors for developing GDM?",
+      "answer": "Risk factors include being overweight or obese, older maternal age, and a family history of diabetes[cite: 1252]."
+    },
+    {
+      "question": "What is the Modified Pedersen's hypothesis regarding fetal macrosomia?",
+      "answer": "The hypothesis states that maternal hyperglycemia transfers excess glucose to the fetus, stimulating fetal hyperinsulinemia, which acts as a growth factor leading to macrosomia[cite: 1367]."
+    },
+    {
+      "question": "How does GDM affect the risk of cesarean section?",
+      "answer": "GDM increases the risk of cesarean section due to complications like macrosomia and the potential for difficult childbirth[cite: 1270, 1309]."
+    },
+    {
+      "question": "What is the long-term risk of Type 2 Diabetes for women with a history of GDM?",
+      "answer": "Women with GDM have a 20% to 60% risk of developing Type 2 Diabetes within 5 to 10 years after pregnancy[cite: 1314]."
+    },
+    {
+      "question": "What neonatal complication is associated with post-birth hyperinsulinemia?",
+      "answer": "Neonatal hypoglycemia occurs because the newborn continues to produce high levels of insulin (due to prior high maternal glucose) after the maternal glucose supply is cut off at birth[cite: 1367]."
+    },
+    {
+      "question": "How does GDM affect the offspring's long-term cardiovascular health?",
+      "answer": "Offspring of mothers with GDM have a higher risk of early-onset cardiovascular conditions, including high blood pressure and heart failure[cite: 1415]."
+    },
+    {
+      "question": "How does GDM impact breast milk production?",
+      "answer": "GDM can delay the initiation of lactation and alter breast milk composition, taking longer to reach normal levels of citrate, lactose, and nitrogen[cite: 1390, 1391]."
+    },
+    {
+      "question": "What is the success rate of lifestyle modification in treating GDM?",
+      "answer": "Up to 70-85% of women with GDM can be successfully treated with diet, exercise, and lifestyle changes alone[cite: 1422]."
+    },
+    {
+      "question": "Which oral medications are discussed for GDM management in the review?",
+      "answer": "Metformin and glyburide are discussed, though they can cross the placental barrier, raising some safety concerns[cite: 1257, 1466]."
+    },
+    {
+      "question": "What is the recommended target for fasting blood sugar in GDM according to the ADA?",
+      "answer": "The ADA recommends a fasting blood sugar target of 95 mg/dL or lower for pregnant women with GDM[cite: 1450]."
+    },
+    {
+      "question": "How frequently should women with prior GDM be screened for Type 2 Diabetes?",
+      "answer": "Women with prior GDM should undergo testing for Type 2 Diabetes at least once every 1 to 3 years."
+    },
+    {
+      "question": "What physiological change in the placenta contributes to fetal overgrowth in GDM?",
+      "answer": "Elevated maternal insulin and glucose activate placental mTOR signaling and increase amino acid transporters (System A and L), boosting nutrient supply to the fetus[cite: 1370]."
+    },
+    {
+      "question": "What is the relationship between maternal obesity and GDM risk?",
+      "answer": "Obese pregnant women are 3.56 times more likely, and extremely obese women are 8.56 times more likely to develop GDM compared to those of average weight[cite: 1346]."
+    },
+    {
+      "question": "What specific congenital anomalies are more common in diabetic pregnancies?",
+      "answer": "The most prevalent anomalies include heart defects and neural tube disorders such as spina bifida[cite: 1380]."
+    },
+    {
+      "question": "Why is the one-step GDM diagnosis approach controversial compared to the two-step approach?",
+      "answer": "The one-step approach results in diagnosing two to three times more women with GDM, significantly increasing the healthcare caseload[cite: 1511]."
+    },
+    {
+      "question": "What markers indicate 'decompensation' of beta-cells in post-GDM women?",
+      "answer": "Markers of decompensation include elevated glucose levels, noticeable insulin resistance, increased C-reactive protein, and declining adiponectin levels[cite: 1321, 1323]."
+    },
+    {
+      "question": "How does reduced hepatic conjugation of bilirubin affect infants of diabetic mothers?",
+      "answer": "It leads to increased enterohepatic circulation of bilirubin, contributing to a higher risk of neonatal jaundice[cite: 1402]."
+    },
+    {
+      "question": "What effect does GDM have on the immune composition of colostrum?",
+      "answer": "GDM leads to elevated levels of cytokines like IL-6 and IL-15, and decreased levels of IL-1ra and GM-CSF in colostrum[cite: 1393]."
+    },
+    {
+      "question": "What is the primary goal of GDM treatment?",
+      "answer": "The primary goal is to control high blood sugar levels to reduce health hazards for both the mother and the infant[cite: 1279]."
+    },
+    {
+      "question": "What happens to insulin sensitivity in GDM patients immediately postpartum?",
+      "answer": "Insulin sensitivity typically returns quickly to normal levels after delivery, allowing most women to discontinue GDM medication[cite: 1284]."
+    },
+    {
+      "question": "What role does physical exercise play in GDM management?",
+      "answer": "Moderate exercise lowers the risk of GDM, reduces the chance of having large newborns, and helps prevent hypertensive disorders and preterm birth[cite: 1458]."
+    },
+    {
+      "question": "How does the 'ectopic fat storage syndrome' theory explain Type 2 Diabetes?",
+      "answer": "It suggests that the deposition of triglycerides in non-adipose tissues like muscle, liver, and pancreatic cells contributes to insulin resistance and beta-cell dysfunction[cite: 1040]."
+    },
+    {
+      "question": "What is the recommended HbA1c range for identifying high risk of diabetes (pre-diabetes) according to the IEC?",
+      "answer": "The IEC identifies an HbA1c range of ≥6.0% and <6.5% as indicating a high risk for developing diabetes[cite: 1052]."
+    },
+    {
+      "question": "What is the main limitation of using insulin therapy in Type 2 Diabetes?",
+      "answer": "Traditional insulins have inconsistent absorption and peaks that may cause hypoglycemia; however, newer analogues have improved pharmacokinetic profiles[cite: 1110, 1111]."
+    }
+  ]
